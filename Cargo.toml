@@ -10,9 +10,9 @@ documentation = "https://rtic.rs/"
 edition = "2018"
 keywords = ["arm", "cortex-m"]
 license = "MIT OR Apache-2.0"
-name = "cortex-m-rtic"
+name = "lpc55-rtic"
 readme = "README.md"
-repository = "https://github.com/rtic-rs/cortex-m-rtic"
+repository = "https://github.com/lpc55/lpc55-rtic"
 version = "0.5.5"
 
 [lib]
@@ -51,11 +51,11 @@ name = "types"
 required-features = ["__v7"]
 
 [dependencies]
-cortex-m = "0.6.2"
-cortex-m-rtic-macros = { path = "macros", version = "0.5.2" }
+cortex-m = "0.7"
+cortex-m-rtic-macros = "0.5.2"
 rtic-core = "0.3.0"
 cortex-m-rt = "0.6.9"
-heapless = "0.5.0"
+heapless = "0.6.0"
 
 [build-dependencies]
 version_check = "0.9"
@@ -77,8 +77,6 @@ version = "0.5.2"
 trybuild = "1"
 
 [features]
-heterogeneous = ["cortex-m-rtic-macros/heterogeneous", "microamp"]
-homogeneous = ["cortex-m-rtic-macros/homogeneous"]
 # used for testing this crate; do not use in applications
 __v7 =[]
 __min_r1_43 =[]
@@ -86,13 +84,6 @@ __min_r1_43 =[]
 [profile.release]
 codegen-units = 1
 lto = true
-
-[workspace]
-members = [
-  "heterogeneous",
-  "homogeneous",
-  "macros",
-]
 
 # do not optimize proc-macro deps or build scripts
 [profile.dev.build-override]

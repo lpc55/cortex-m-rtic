@@ -170,7 +170,7 @@ pub trait MultiCore {}
 /// [`NVIC::pend`](../cortex_m/peripheral/struct.NVIC.html#method.pend)
 pub fn pend<I>(interrupt: I)
 where
-    I: Nr,
+    I: Copy + Nr,
 {
     NVIC::pend(interrupt)
 }
