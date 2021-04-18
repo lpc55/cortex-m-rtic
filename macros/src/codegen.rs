@@ -81,9 +81,17 @@ pub fn app(app: &App, analysis: &Analysis, extra: &Extra) -> TokenStream2 {
 
                 #(#pre_init_stmts)*
 
-                #call_init
+                #[inline(never)]
+                fn init_late_resources<F>(f: F) where F: FnOnce() {
+                    f();
+                }
 
-                #(#post_init_stmts)*
+                // Wrap late_init_stmts in a function to ensure that stack space is reclaimed.
+                init_late_resources(||{
+                    #call_init
+
+                    #(#post_init_stmts)*
+                });
 
                 #call_idle
             }

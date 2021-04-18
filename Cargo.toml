@@ -52,7 +52,7 @@ required-features = ["__v7"]
 
 [dependencies]
 cortex-m = "0.7"
-cortex-m-rtic-macros = "0.5.2"
+cortex-m-rtic-macros = {path = "./macros"}
 rtic-core = "0.3.0"
 cortex-m-rt = "0.6.9"
 heapless = "0.6.0"
