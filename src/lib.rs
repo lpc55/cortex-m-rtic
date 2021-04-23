@@ -50,7 +50,7 @@ use cortex_m::{
 };
 #[cfg(all(not(feature = "heterogeneous"), not(feature = "homogeneous")))]
 use cortex_m_rt as _; // vector table
-pub use cortex_m_rtic_macros::app;
+pub use lpc55_rtic_macros::app;
 pub use rtic_core::{Exclusive, Mutex};
 
 #[cfg(armv7m)]
