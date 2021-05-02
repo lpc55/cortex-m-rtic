@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.5.7] - 2021-05-02
+
+- Bound pend on InterruptNumber
+
+## [v0.5.6] - 2021-04-24
+
+- Backport of stack fix
+
 ## [v0.5.5] - 2020-08-27
 
 - Includes the previous soundness fix.
